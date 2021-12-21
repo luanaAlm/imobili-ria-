@@ -1,4 +1,6 @@
 from pathlib import Path
+# Configure Django App for Heroku.
+import django_on_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,3 +95,6 @@ MEDIA_ROOT = 'imagens'
 MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure Django App for Heroku.
+django_on_heroku.settings(locals())
