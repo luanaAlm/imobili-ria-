@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure--ydtccbnwwrr8mnw!8sz=q#i9ck9u)7=wuqiu*f&+yn29j0mtk
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["imobiliaria-landingpage.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["https://imobiliaria-landingpage.herokuapp.com/"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
