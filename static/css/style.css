@@ -1,0 +1,803 @@
+/**
+* Author: Luana Rodrigues Almeida
+* Email: luanarodrigues3211@gmail.com
+* Contato: padraoagenciadigital.com.br
+*/
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap");
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  /* --main-color: #7857fe; */
+  --main-color: #96031a;
+  --color-1: #e91e63;
+  --color-2: #f5ae10;
+  --color-3: #25d366;
+  --bg-dark: #2d2c2f;
+  --main-to-dark-color: var(--main-color);
+  --dark-to-main-color: var(--bg-dark);
+  --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --block-900: #1b1b1e;
+  --block-400: #555555;
+  --block-100: #f7f7f7;
+  --block-000: #ffffff;
+  --block-alpha-100: rgba(0, 0, 0, 0.05);
+}
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  /* text-decoration: none; */
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  /* overflow-x: hidden; */
+  background-color: var(--block-000);
+  line-height: 1.5;
+  /* background: url(../img/gradiente.png) top right no-repeat; */
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+ul {
+  list-style: none;
+}
+.btn-1 {
+  background-color: #faa916;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  box-shadow: var(--shadow-black-300);
+  font-weight: 500;
+}
+.btn-1:focus {
+  box-shadow: var(--shadow-black-300);
+}
+.btn-1:hover {
+  color: #faa916;
+  background-color: #fff;
+}
+.btn-2 {
+  background-color: var(--main-color);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  box-shadow: var(--shadow-black-300);
+  font-weight: 500;
+}
+.btn-2:focus {
+  box-shadow: var(--shadow-black-300);
+}
+.btn-2:hover {
+  color: var(--main-color);
+  background-color: var(--block-100);
+}
+@keyframes spin_01 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounceTop_01 {
+  0%,
+  100% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+.section-padding {
+  padding: 90px 0;
+}
+.div-padding {
+  padding-top: 80px;
+}
+.section-title {
+  margin-bottom: 60px;
+}
+.section-title h2 {
+  font-size: 35px;
+  color: var(--block-900);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+.owl-carousel .owl-dots {
+  padding: 0 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-carousel button.owl-dot {
+  height: 6px;
+  width: 24px;
+  background-color: #dddddd !important;
+  display: inline-block;
+  margin: 0 4px;
+  border-radius: 5px;
+}
+.owl-carousel button.owl-dot.active {
+  background-color: var(--main-color) !important;
+}
+/*--------------------------------------------------------------
+# Nav
+--------------------------------------------------------------*/
+.navbar {
+  background-color: var(--main-color);
+  padding: 20px 0;
+  transition: all 0.5s ease;
+}
+.navbar.navbar-shrink {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--main-color);
+  padding: 10px 0;
+}
+.navbar > .container {
+  padding: 0 15px;
+}
+.navbar .navbar-brand {
+  font-size: 30px;
+  color: var(--block-000);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.navbar .nav-item {
+  margin-left: 40px;
+}
+
+.navbar .nav-item .nav-link {
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 400;
+  padding: 5px 0;
+  position: relative;
+}
+.navbar .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: all 0.5s ease;
+  transform: scale(0);
+}
+.navbar .nav-item .nav-link.active:hover::before {
+  transform: scale(1);
+}
+.fa-bars {
+  color: var(--block-000);
+}
+/*-------------------------------------------------- */
+/* CUSTOMIZE THE CAROUSEL- HOME
+-------------------------------------------------- */
+/* Carousel base class */
+.carousel {
+  margin-bottom: 8rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 10rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 40rem;
+  background-color: var(--block-900);
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  min-width: 100%;
+  height: 40rem;
+}
+.shadow-img {
+  width: 640px;
+  height: 640px;
+  opacity: 0.7;
+  position: absolute;
+}
+.home-text h1 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+.home-text p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 300;
+}
+.home-btn {
+  padding-top: 15px;
+}
+/*--------------------------------------------------------------
+# sobre
+--------------------------------------------------------------*/
+.sobre {
+  outline: none;
+  background-color: var(--block-000);
+  transition: transform 0.3s;
+  padding: 30px;
+  padding-bottom: 30px;
+  color: var(--block-900);
+  box-shadow: var(--shadow-black-100);
+  border-width: 10px;
+  border: 2px solid var(--main-color);
+  border-radius: 20px;
+}
+.sobre:hover {
+  transform: translateY(-15px);
+  transition: transform 0.3s;
+}
+.sobre-item {
+  /* background-color: var(--main-color); */
+  padding: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-radius: 10px;
+  /* box-shadow: var(--shadow-black-100); */
+  height: 25rem;
+}
+.sobre-item i {
+  font-size: 50px;
+  color: var(--main-color);
+  display: inline-block;
+}
+.sobre-item h5 {
+  font-size: 22px;
+  color: var(--block-900);
+  margin: 20px 0;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.sobre-item p {
+  font-weight: 400;
+  color: var(--block-900);
+  font-size: 16px;
+  margin: 0 0 30px;
+  line-height: 26px;
+}
+
+/*--------------------------------------------------------------
+# Imóveis
+--------------------------------------------------------------*/
+.destaques {
+  background-color: var(--block-100);
+}
+.card {
+  border: none;
+  border-radius: none;
+  box-shadow: var(--shadow-black-100);
+  border-width: 15px;
+}
+.card-body h3 {
+  font-weight: 600;
+  color: var(--block-400);
+  font-size: 24px;
+  /* margin: 0 0 30px; */
+  line-height: 26px;
+}
+.card-body h4 {
+  font-weight: 600;
+  color: var(--main-color);
+  font-size: 24px;
+  /* margin: 0 0 30px; */
+  line-height: 26px;
+}
+.texto {
+  position: absolute;
+  background-color: var(--color-2);
+  color: #fff;
+  text-align: center;
+  top: 10px;
+  width: 150px;
+  line-height: 30px;
+  height: 30px;
+}
+/*--------------------------------------------------------------
+#index/depoiments
+--------------------------------------------------------------*/
+.depoiments-item {
+  margin: 15px;
+  padding: 30px;
+  box-shadow: var(--shadow-black-100);
+  border-radius: 10px;
+  text-align: center;
+}
+.depoiments-item .img-box {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin-bottom: 30px;
+  border: 4px solid var(--main-color);
+  border-radius: 50px;
+}
+.depoiments-item .img-box img {
+  border-radius: 50%;
+  width: 100%;
+}
+.depoiments-item p {
+  font-size: 16px;
+  margin: 0 0 20px;
+  color: var(--block-400);
+  line-height: 26px;
+  font-weight: 300;
+}
+.depoiments-item h3 {
+  font-size: 22px;
+  color: var(--block-900);
+  font-weight: 500px;
+  margin: 0 0 5px;
+  text-transform: capitalize;
+}
+.depoiments-item span {
+  display: block;
+  font-size: 16px;
+  color: var(--block-400);
+  font-weight: 300;
+}
+.depoiments-item .rating {
+  margin-top: 10px;
+}
+.depoiments-item .rating i {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--color-2);
+}
+
+/*--------------------------------------------------------------
+# FAQ
+--------------------------------------------------------------*/
+.faq .accordion-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.faq .accordion-header {
+  box-shadow: var(--shadow-black-100);
+  padding: 20px 50px 20px 30px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+.faq .accordion-header::before {
+  content: "\2b";
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  text-align: center;
+  line-height: 30px;
+  color: var(--block-400);
+}
+.faq .accordion-header:not(.collapsed)::before {
+  content: "-";
+  color: #ffffff;
+}
+
+.faq .accordion-header:not(.collapsed) {
+  background-color: var(--main-color);
+  box-shadow: none;
+}
+.faq .accordion-header:not(.collapsed) h3 {
+  color: #f7f7f7;
+}
+
+.faq .accordion-header h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--block-400);
+  margin: 0;
+  transition: all 0.5s ease;
+}
+.faq .accordion-body {
+  padding: 20px 30px;
+  background-color: var(--block-100);
+}
+.faq .accordion-body p {
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--block-400);
+  line-height: 26px;
+  margin: 0;
+}
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contato {
+  background-color: var(--block-100);
+}
+.contact-info h3 {
+  font-size: 20px;
+  color: var(--block-900);
+  font-weight: 500;
+  margin: 0 0 40px;
+}
+.contact-info-item {
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 30px;
+}
+.contact-info-item i {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--main-color);
+  border: 1px solid --main-color;
+  text-align: center;
+  line-height: 38px;
+  left: 0;
+  top: 0;
+}
+.contact-info-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--block-900);
+}
+.contact-info-item p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 26px;
+  color: var(--block-400);
+}
+.contact-form .form-group {
+  margin-bottom: 25px;
+}
+.contact-form .control-label {
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 26px;
+  color: var(--block-400);
+}
+.contact-form #id_nome,
+#id_email,
+#id_telefone {
+  height: 52px;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-black-100);
+  border-radius: 15px;
+  padding: 0 24px;
+  color: var(--block-900);
+  background-color: var(--block-000);
+  transition: all 0.5s ease;
+}
+.contact-form #id_mensagem {
+  padding-top: 12px !important;
+  height: 140px;
+  resize: none;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-black-100);
+  border-radius: 15px;
+  padding: 0 24px;
+  color: var(--block-900);
+  background-color: var(--block-000);
+  transition: all 0.5s ease;
+}
+.contact-form #id_nome:focus,
+#id_email:focus,
+#id_telefone:focus,
+#id_mensagem:focus {
+  border-color: var(--main-color);
+}
+/*--------------------------------------------------------------
+# View_imoveis
+--------------------------------------------------------------*/
+.imoveis {
+  padding-top: 10rem;
+}
+.imoveis img {
+  width: 30rem;
+  height: 22rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+.imoveis h1 {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--block-400);
+  margin: 0;
+}
+.imoveis-item {
+  text-align: center;
+}
+.imoveis-item h4 {
+  padding-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--block-400);
+  margin: 0;
+}
+.imoveis-item h3 {
+  align-items: center;
+  padding-bottom: 2rem;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--block-400);
+  margin: 0;
+}
+.imoveis-item p {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--block-400);
+  line-height: 26px;
+  margin: 0;
+}
+.preco h3 {
+  font-size: 30px;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  color: var(--block-000);
+  background-color: var(--main-color);
+}
+.inform {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  background: #8e2de2; /* fallback for old browsers */
+  background: var(--main-color);
+  padding: 50px 0;
+}
+.footer-col h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 25px;
+  text-transform: capitalize;
+}
+.footer-col p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  line-height: 26px;
+  margin: 0;
+}
+.footer-col ul {
+  margin: 0;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  display: block;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.footer-col ul li i {
+  width: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #ffffff;
+  border: 1px solid --main-color;
+  text-align: center;
+  /* line-height: 38px; */
+  left: 0;
+  top: 0;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  display: block;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.footer-col ul li a:hover {
+  padding-left: 5px;
+}
+.footer .copyright {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  color: var(--block-000);
+  font-weight: 300;
+}
+.footer .copyright a {
+  color: var(--block-000) !important;
+}
+/*--------------------------------------------------------------
+# WhatsApp
+--------------------------------------------------------------*/
+.button-whasapp {
+  right: 25px;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  background-color: var(--color-3);
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: var(--shadow-black-300);
+  z-index: 100;
+  margin-top: 16px;
+}
+.button-whasapp .my-float {
+  margin-top: 16px;
+  color: #ffffff;
+}
+/*--------------------------------------------------------------
+# Responsividade
+--------------------------------------------------------------*/
+@media (max-width: 991px) {
+  .navbar-toggler {
+    background-color: var(--dark-to-main-color);
+    box-shadow: var(--shadow-black-300);
+    height: 34px;
+    width: 44px;
+    padding: 0;
+    font-size: 17px;
+    color: #ffffff;
+  }
+  .navbar-nav {
+    background-color: var(--dark-to-main-color);
+  }
+  .navbar .nav-item {
+    margin: 0;
+    padding: 5px 15px;
+  }
+  .navbar.navbar-shrink .navbar-toggler,
+  .navbar.navbar-shrink .navbar-nav {
+    background-color: var(--main-color);
+  }
+  .home-text h1 {
+    font-size: 40px;
+  }
+  .card-body h3 {
+    font-weight: 600;
+    color: var(--block-400);
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .card-body h4 {
+    font-weight: 600;
+    color: var(--main-color);
+    font-size: 20px;
+    /* margin: 0 0 30px; */
+    line-height: 26px;
+  }
+  .card-body h5 {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .footer-col {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .carousel-caption {
+    bottom: 4rem;
+  }
+  .carousel-item {
+    height: 37rem;
+  }
+  .carousel-item > img {
+    height: 37rem;
+  }
+  .home-text h1 {
+    font-size: 38px;
+    /* margin: 0 0 40px; */
+  }
+  .home-text p {
+    font-size: 16px;
+  }
+  .home-btn {
+    padding-top: 10px;
+  }
+  .contact-form {
+    margin-top: 20px;
+  }
+  .section-title h2 {
+    font-size: 35px;
+  }
+  .button-whasapp {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 25px;
+  }
+  .button-whasapp .my-float {
+    margin-top: 10px;
+  }
+  .services-content {
+    margin-bottom: 30px;
+  }
+  .imoveis img {
+    width: 30rem;
+    height: 16rem;
+  }
+}
+@media (max-width: 575px) {
+  .carousel-caption {
+    bottom: 4rem;
+  }
+  .home-text h1 {
+    font-size: 35px;
+  }
+  .home-text p {
+    font-size: 16px;
+  }
+  .home-btn {
+    padding-top: 10px;
+  }
+  .section-title h2 {
+    font-size: 30px;
+  }
+  .button-whasapp {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 25px;
+  }
+  .button-whasapp .my-float {
+    margin-top: 10px;
+  }
+  .imoveis {
+    padding-top: 6rem;
+  }
+  .imoveis img {
+    width: 15rem;
+    height: 24rem;
+  }
+  .imoveis h1 {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--block-400);
+    margin: 0;
+  }
+}
