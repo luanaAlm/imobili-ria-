@@ -1,1 +1,1 @@
-web: gunicorn imoveis.wsgi
+web: gunicorn imoveis.wsgi --log-file -
