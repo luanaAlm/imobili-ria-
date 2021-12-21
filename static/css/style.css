@@ -760,17 +760,28 @@ ul {
   }
 }
 @media (max-width: 575px) {
+  .btn-1 {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .btn-2 {
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+  }
   .carousel-caption {
-    bottom: 4rem;
+    bottom: 5rem;
   }
   .home-text h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
   .home-text p {
     font-size: 16px;
   }
   .home-btn {
-    padding-top: 10px;
+    padding-top: 20px;
   }
   .section-title h2 {
     font-size: 30px;
