@@ -57,7 +57,7 @@
                         <div class="col-lg-8">
                             <div class="row justify-content-center">
                                 <div class="imoveis-item col-lg-4 col-md-4">
-                                    <h4><strong>Imóvel:</strong>{{ imoveis.tipo }}</h4>
+                                    <h4><strong>Imóvel:</strong> {{ imoveis.tipo }}</h4>
                                 </div>
                                 <div class="imoveis-item col-lg-4 col-md-4">
                                     <h4><strong>Bairro:</strong> {{ imoveis.bairro }}</h4>
@@ -107,6 +107,15 @@
                             <p>{{imoveis.informacao}}</p>
                         </div>
                     </div>
+                    <div class="interesse" data-aos="fade-up">
+                        <h2>Ficou Interessado ?</h2>
+                        <h3>Entre em contato conosco agora mesmo!</h3>
+                        <div class="home-btn">
+                            <a href="https://api.whatsapp.com/send?phone=5586999999999&text=Olá!%20Encontrei%20seu%20site%20na%20Internet%20e%20preciso%20de%20seus%20serviços." class="btn btn-1">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                Entre em Contato</a>
+                        </div>  
+                    </div>
                 </div>
             </section>
         {% endblock %}
@@ -117,7 +126,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-4">
                         <div class="footer-col">
-                            <a class="navbar-brand" href="{% url 'index' %}">
+                            <a href="{% url 'index' %}">
                                 <i class="fa fa-home" aria-hidden="true"> <br> Imobiliária</i>
                             </a>
                             

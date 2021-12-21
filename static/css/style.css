@@ -257,7 +257,6 @@ ul {
   padding-bottom: 30px;
   text-align: center;
   border-radius: 10px;
-  /* box-shadow: var(--shadow-black-100); */
   height: 25rem;
 }
 .sobre-item i {
@@ -569,6 +568,25 @@ ul {
   padding-top: 1.5rem;
   padding-bottom: 0.5rem;
 }
+.interesse {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+.interesse h2 {
+  padding-bottom: 1rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--block-400);
+  margin: 0;
+}
+.interesse h3 {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--block-400);
+  line-height: 26px;
+  margin: 0;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -638,6 +656,11 @@ ul {
 }
 .footer .copyright a {
   color: var(--block-000) !important;
+}
+.footer-col .fa-home {
+  text-align: center;
+  font-size: 32px;
+  color: var(--block-000);
 }
 /*--------------------------------------------------------------
 # WhatsApp
