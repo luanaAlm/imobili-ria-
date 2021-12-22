@@ -56,14 +56,10 @@ class Imovel(models.Model):
     ID_Imovel = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
     # imagens
-    imagem1 = models.ImageField(
-        upload_to="img_imoveis/%y", blank=False, null=False)
-    imagem2 = models.ImageField(
-        upload_to="img_imoveis/%y", blank=False, null=False)
-    imagem3 = models.ImageField(
-        upload_to="img_imoveis/%y", blank=False, null=False)
-    imagem4 = models.ImageField(
-        upload_to="img_imoveis/%y", blank=False, null=False)
+    imagem1 = models.URLField(max_length=300)
+    imagem2 = models.URLField(max_length=300)
+    imagem3 = models.URLField(max_length=300)
+    imagem4 = models.URLField(max_length=300)
     titulo = models.CharField(max_length=100)
     # informação
     informacao = models.TextField(max_length=2000, help_text="Descrição")
@@ -83,8 +79,7 @@ class Imovel(models.Model):
 
 class Depoimento (models.Model):
     ID_Depoimentos = models.AutoField(primary_key=True)
-    imageDep = models.ImageField(
-        upload_to="img_Depoimentos/%y", blank=False, null=False)
+    imageDep = models.URLField(max_length=300)
     nome_depoente = models.CharField(max_length=100, blank=False, null=False)
     cliente_Dep = models.CharField(max_length=200, blank=False, null=False)
 

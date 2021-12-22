@@ -139,7 +139,7 @@
             {% for i in destaques %} 
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{i.imagem1.url}}" loading="lazy" alt="{{i.title}}">
+                        <img class="card-img-top" src="{{i.imagem1}}" loading="lazy" alt="{{i.title}}">
                         <label class="texto">{{i.categoria}}</label>
                         <div class="card-body">
                             <h3>{{i.title}}</h3>
@@ -159,16 +159,14 @@
             {% for i in casas %} 
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{i.imagem1.url}}" loading="lazy" alt="{{i.title}}">
+                        <img class="card-img-top" src="{{i.imagem1}}" loading="lazy" alt="{{i.title}}">
                         <label class="texto">{{i.categoria}}</label>
                         <div class="card-body">
                             <h3>{{i.title}}</h3>
                             <h4>RS {{i.valor}}</h4>
                             <!-- <p class="card-text">{{i.informacao}}</p> -->
-                            <div class="btn-group">
-                                <h5>Bairro: {{i.bairro}}</h5>
-                            <h5>Quartos {{i.quartos}}</h5>
-                            </div>
+                            <h5><i class="fa fa-map-marker" aria-hidden="true"></i> {{i.bairro}}</h5>
+                                <h5><i class="fa fa-bed" aria-hidden="true"></i> {{i.quartos}}</h5>
                             <div class="d-flex justify-content-between align-items-center">
                                     <a class="btn btn-sm btn-2" href="{% url 'view_imoveis' i.ID_Imovel %}">Saiba Mais</a>
                             </div>
@@ -181,16 +179,14 @@
             {% for i in apartamentos %} 
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{i.imagem1.url}}" loading="lazy" alt="{{i.title}}">
+                        <img class="card-img-top" src="{{i.imagem1}}" loading="lazy" alt="{{i.title}}">
                         <label class="texto">{{i.categoria}}</label>
                         <div class="card-body">
                             <h3>{{i.title}}</h3>
                             <h4>RS {{i.valor}}</h4>
                             <!-- <p class="card-text">{{i.informacao}}</p> -->
-                            <div class="btn-group">
-                                <h5>Bairro: {{i.bairro}}</h5>
-                            <h5>Quartos {{i.quartos}}</h5>
-                            </div>
+                            <h5><i class="fa fa-map-marker" aria-hidden="true"></i> {{i.bairro}}</h5>
+                                <h5><i class="fa fa-bed" aria-hidden="true"></i> {{i.quartos}}</h5>
                             <div class="d-flex justify-content-between align-items-center">
                                     <a class="btn btn-sm btn-2" href="{% url 'view_imoveis' i.ID_Imovel %}">Saiba Mais</a>
                             </div>
@@ -217,7 +213,7 @@
                 {% for i in depoimento %}
                     <div class="depoiments-item" data-aos="zoom-in">
                         <div class="img-box">
-                            <img src="{{i.imageDep.url}}" alt="{{i.empresa}}" loading="lazy">
+                            <img src="{{i.imageDep}}" alt="{{i.empresa}}" loading="lazy">
                         </div>
                         <p>{{i.cliente_Dep}}</p>
                         <h3>{{i.nome_depoente}}</h3>
