@@ -76,6 +76,10 @@ class Imovel(models.Model):
     tipo = models.CharField(
         max_length=100, choices=TIPO_CHOICE)
 
+    def __str__(self):
+        template = '{0.ID_Imovel} - {0.title} - {0.tipo}'
+        return template.format(self)
+
 
 class Depoimento (models.Model):
     ID_Depoimentos = models.AutoField(primary_key=True)
@@ -84,5 +88,5 @@ class Depoimento (models.Model):
     cliente_Dep = models.CharField(max_length=200, blank=False, null=False)
 
     def __str__(self):
-        template = '{0.ID_Depoimentos} - {0.nome_depoente} - {0.cliente_Dep}'
+        template = '{0.ID_Depoimentos} - {0.nome_depoente} '
         return template.format(self)
