@@ -1,12 +1,13 @@
 from pathlib import Path
 # Configure Django App for Heroku.
 import django_heroku
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure--ydtccbnwwrr8mnw!8sz=q#i9ck9u)7=wuqiu*f&+yn29j0mtk'
+SECRET_KEY = config('DEBUG')
 
-DEBUG = True
+DEBUG = config('SECRET_KEY')
 
 ALLOWED_HOSTS = ["https://imoveis-test.herokuapp.com/"]
 
@@ -54,10 +55,10 @@ WSGI_APPLICATION = 'imoveis.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "DEMO_IMOVEIS",
-        "USER": "postgres",
-        "PASSWORD": "root",
-        "HOST": "localhost",
+        "NAME": config('NAME'),
+        "USER": config('USER'),
+        "PASSWORD": config('PASSWORD'),
+        "HOST": config('HOST'),
         "PORT": "5432",
     }
 }
